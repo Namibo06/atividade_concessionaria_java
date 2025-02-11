@@ -4,12 +4,15 @@ public class Carro {
     private String marca;
     private String modelo;
     private int ano;
+    private String placa;
     private double velocidadeAtual;
 
-    public Carro(String marca,String modelo, int ano){
+    public Carro(String marca,String modelo, String placa, int ano){
         this.marca = marca;
         this.modelo = modelo;
+        this.placa = placa;
         this.ano = ano;
+
         this.velocidadeAtual = 0;
     }
 
@@ -30,6 +33,20 @@ public class Carro {
                 "Ano: " + getAno() + "\n" +
                 "Velocidade Atual: " + getVelocidadeAtual()
         );
+    }
+
+    Override
+    public boolean equals(Object obj){
+        Carro carroTemporario = (Carro) obj;
+        return this.placa.equals(carroTemporario.getPlaca());
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
     public String getMarca() {
